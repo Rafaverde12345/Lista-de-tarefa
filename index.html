@@ -9,20 +9,24 @@
 
 </head>
 <body>
-
-    <ul> id="lista-tareas"
+ <button onclick="agregarTarea()">Agregar</button>
+ 
+    <ul id="lista-tareas">
         <li>Tarea 1</li>
         <li>Tarea 2</li>
         <li>Tarea 3</li>
 
     </ul>
-    <button onclick="agregarTarea()">Agregar</button>
+   
 
 <script>
-    function agregarTarea() {
-        }
-    console.log("agregar tarea")
-
+function agregarTarea() {
+    const lista = document.getElementById("lista-tareas");
+    const nuevaTarea = document.createElement("li");
+    nuevaTarea.textContent = "Nueva Tarea";
+    lista.appendChild(nuevaTarea);
+    console.log("tarea agregada");
+}
 </script>
 
 </body>
