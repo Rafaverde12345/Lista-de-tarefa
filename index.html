@@ -1,13 +1,13 @@
 <!DOCTYPE html>
+<html>
 <head> 
-<title>Test</title>
+    <title>Test</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             padding: 20px;
             background-color: #f4f4f4;
-         
         }
         h1 {
             color: #333;
@@ -15,6 +15,7 @@
         ul {
             list-style-type: none;
             padding: 0;
+            border-radius: 10px;
         }
         li {
             background: #fff;
@@ -28,46 +29,44 @@
             color: white;
             border: none;
             cursor: pointer;
+            border-radius: 10px;
         }
         button:hover {
             background-color: #218838;
         }
-        Div {
-            
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
-  
-
-    
-    
-
 </head>
 
 <body>
 
-<Div>
+<div>
     <h1>Lista de tareas</h1>
-    <p>Mi lista de tareas</p>
-</Div>
+</div>
 
+<input type="text" id="nueva-tarea" placeholder="Escribe tu tarea aquí">
+<button onclick="agregarTarea()">Agregar</button>
 
- <button onclick="agregarTarea()">Agregar</button>
- 
-    <ul id="lista-tareas">
-        <li>Tarea 1</li>
-        <li>Tarea 2</li>
-        <li>Tarea 3</li>
+<ul id="lista-tareas">
 
-    </ul>
-
+</ul>
 
 <script>
 function agregarTarea() {
-    const lista = document.getElementById("lista-tareas");
-    const nuevaTarea = document.createElement("li");
-    nuevaTarea.textContent = "Nueva Tarea";
-    lista.appendChild(nuevaTarea);
-    console.log("tarea agregada");
+    const ul = document.getElementById("lista-tareas");
+    const input = document.getElementById("nueva-tarea");
+    const texto = input.value;
+
+    if (texto.trim() !== "") {
+        const li = document.createElement('li');
+        li.textContent = texto;
+        ul.appendChild(li);
+        input.value = "";
+    }
 }
 </script>
 
