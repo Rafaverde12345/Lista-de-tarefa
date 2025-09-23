@@ -1,74 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head> 
-    <title>Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #333;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            border-radius: 10px;
-        }
-        li {
-            background: #fff;
-            margin: 5px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-</head>
+<html lang="en">
+    <head>
+        <title> desafio eliti</title>
+    </head>
+    <body>
+        <h1>lista de Tarefas</h1>
+        <ul>
 
-<body>
+        </ul>
+        <input>
+        </input>
+         <button onclick="añadir()">adicionar</button>
+        <script>
+            function añadir() {
+                const ul = document.querySelector("ul");
+                const input = document.querySelector("input");
+                const tarea = input.value;
 
-<div>
-    <h1>Lista de tareas</h1>
-</div>
+                const li = document.createElement("li");
+                li.innerText = tarea;
+                ul.appendChild(li);
 
-<input type="text" id="nueva-tarea" placeholder="Escribe tu tarea aquí">
-<button onclick="agregarTarea()">Agregar</button>
-
-<ul id="lista-tareas">
-
-</ul>
-
-<script>
-function agregarTarea() {
-    const ul = document.getElementById("lista-tareas");
-    const input = document.getElementById("nueva-tarea");
-    const texto = input.value;
-
-    if (texto.trim() !== "") {
-        const li = document.createElement('li');
-        li.textContent = texto;
-        ul.appendChild(li);
-        input.value = "";
-    }
-}
-</script>
-
-</body>
+              input.value = "";
+            }
+        </script>
+    </body>
 </html>
